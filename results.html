@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>النتائج — أين يضيع عمرك</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📊</div>
+      <div>
+        <div class="title" data-i18n="results.title">نتيجتك</div>
+        <div class="subtitle" data-i18n="results.subtitle">أرقام صريحة + توزيع النزيف</div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn ghost" href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a class="btn ghost" href="survey.html" data-i18n="nav.backSurvey">رجوع للاستبيان</a>
+      <button class="btn ghost" id="langBtn" type="button">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="h1" data-i18n="results.h1">هذا تقدير عملي لنزيف وقتك — ليس حكمًا عليك.</h1>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="statLabel" data-i18n="results.lostDaily">ساعات ضائعة يوميًا</div>
+          <div class="statValue" id="lostDaily">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="results.lostYearlyH">ساعات سنويًا</div>
+          <div class="statValue" id="lostYearlyH">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="results.lostYearlyD">أيام سنويًا</div>
+          <div class="statValue" id="lostYearlyD">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="results.lost10Y">سنوات خلال 10 سنوات</div>
+          <div class="statValue" id="lost10Y">—</div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <h2 class="h2" data-i18n="results.bleedTitle">توزيع النزيف على 4 محاور</h2>
+      <div class="axes" id="axes"></div>
+
+      <div class="row gap">
+        <button class="btn" id="downloadCsv" type="button" data-i18n="results.csv">تصدير CSV</button>
+        <button class="btn" id="shareWhatsApp" type="button" data-i18n="share.whatsapp">مشاركة واتساب</button>
+        <button class="btn" id="copyLink" type="button" data-i18n="share.copy">نسخ الرابط</button>
+      </div>
+
+      <div class="hint" id="copyStatus" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2 class="h2" data-i18n="results.nextTitle">الخطوة التالية (بسيطة)</h2>
+      <ul class="bullets">
+        <li data-i18n="results.next1">اختر محورًا واحدًا فقط وقلّل نزيفه 20% لمدة أسبوع.</li>
+        <li data-i18n="results.next2">راقب الفرق، ثم كرر. التحسن التراكمي يربح.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
