@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>استبيان — أين يضيع عمرك</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧠</div>
+      <div>
+        <div class="title" data-i18n="survey.title">استبيان: أين يضيع عمرك</div>
+        <div class="subtitle" data-i18n="survey.subtitle">15 سؤال — دقائق قليلة — نتيجة واضحة</div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn ghost" href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <button class="btn ghost" id="langBtn" type="button">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="h1" data-i18n="survey.h1">أجب بصراحة. هذا القياس لن يفيد إلا إذا كان واقعيًا.</h1>
+      <p class="lead" data-i18n="survey.lead">
+        اختر تقييمك لكل بند من 0 إلى 4. (0 = لا ينطبق، 4 = ينطبق بقوة)
+      </p>
+
+      <form id="surveyForm" class="surveyForm">
+        <div id="questions"></div>
+
+        <div class="row gap stickyBar">
+          <button class="btn primary" type="submit" data-i18n="survey.submit">احسب النتيجة</button>
+          <button class="btn" id="resetBtn" type="button" data-i18n="survey.reset">إعادة الضبط</button>
+        </div>
+
+        <div class="hint" data-i18n="survey.privacy">
+          كل الإجابات تُحفظ محليًا على جهازك فقط (localStorage).
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/survey.js"></script>
+</body>
+</html>
