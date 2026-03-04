@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>خريطة حياتك + أين يضيع عمرك</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⌛</div>
+      <div>
+        <div class="title" data-i18n="app.title">خريطة حياتك + أين يضيع عمرك</div>
+        <div class="subtitle" data-i18n="app.subtitle">تصور بصري لعمرِك بالأسبوع + تحليل نزيف الوقت</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" id="langBtn" type="button">EN</button>
+      <a class="btn ghost" href="survey.html" id="startSurveyTop" data-i18n="nav.startSurvey">ابدأ التحليل</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="h1" data-i18n="landing.h1">اعرف أين تقف الآن… بالأسبوع.</h1>
+      <p class="lead" data-i18n="landing.lead">
+        أدخل تاريخ ميلادك واختر متوسط العمر الافتراضي، ثم شاهد خريطة حياتك كشبكة من 4160 أسبوعًا.
+      </p>
+
+      <div class="grid2">
+        <div class="field">
+          <label for="dob" data-i18n="landing.dobLabel">تاريخ الميلاد</label>
+          <input id="dob" type="date" />
+          <div class="hint" data-i18n="landing.dobHint">لن يتم إرسال أي بيانات — كل شيء يعمل محليًا.</div>
+        </div>
+
+        <div class="field">
+          <label for="lifeExpectancy" data-i18n="landing.lifeLabel">متوسط العمر الافتراضي (سنة)</label>
+          <input id="lifeExpectancy" type="number" min="40" max="120" value="80" />
+          <div class="hint" data-i18n="landing.lifeHint">الافتراضي 80 سنة (يمكن تغييره).</div>
+        </div>
+      </div>
+
+      <div class="row gap">
+        <button class="btn primary" id="generateBtn" type="button" data-i18n="landing.generate">
+          توليد خريطة الحياة
+        </button>
+        <a class="btn" href="survey.html" id="startSurvey" data-i18n="landing.startSurvey">
+          ابدأ تحليل "أين يضيع عمرك"
+        </a>
+      </div>
+
+      <div class="stats" id="stats" aria-live="polite">
+        <div class="stat">
+          <div class="statLabel" data-i18n="stats.age">عمرك الحالي</div>
+          <div class="statValue" id="ageVal">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="stats.livedWeeks">الأسابيع التي عشتها</div>
+          <div class="statValue" id="livedWeeksVal">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="stats.leftWeeks">الأسابيع المتبقية</div>
+          <div class="statValue" id="leftWeeksVal">—</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel" data-i18n="stats.completed">عدد من أكملوا التحليل</div>
+          <div class="statValue" id="completedCount">0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2 class="h2" data-i18n="map.h2">خريطة الحياة (كل مربع = أسبوع)</h2>
+        <div class="legend">
+          <span class="chip"><span class="dot green"></span><span data-i18n="map.legendLived">أسابيع عشتها</span></span>
+          <span class="chip"><span class="dot gray"></span><span data-i18n="map.legendLeft">أسابيع متبقية</span></span>
+        </div>
+      </div>
+
+      <div class="mapWrap">
+        <div id="lifeMap" class="lifeMap" aria-label="Life map grid"></div>
+      </div>
+
+      <div class="note" data-i18n="map.note">
+        ملاحظة: الخريطة تقديرية بالأسبوع (52 أسبوع لكل سنة). الهدف ليس الدقة الطبية، بل وضوح الصورة.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="h2" data-i18n="share.h2">شاركها</h2>
+      <p class="lead" data-i18n="share.lead">
+        شارك رابط الموقع مع نص جاهز. (واتساب + نسخ الرابط)
+      </p>
+
+      <div class="row gap">
+        <button class="btn" id="shareWhatsApp" type="button" data-i18n="share.whatsapp">مشاركة واتساب</button>
+        <button class="btn" id="copyLink" type="button" data-i18n="share.copy">نسخ الرابط</button>
+      </div>
+
+      <div class="hint" id="copyStatus" aria-live="polite"></div>
+    </section>
+
+    <footer class="footer">
+      <span data-i18n="footer.note">نسخة MVP — بدون باك-إند. بياناتك تبقى على جهازك.</span>
+    </footer>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
